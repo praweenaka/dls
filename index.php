@@ -60,7 +60,7 @@ $cookie_name = "user";
                 <div>
                     <!--<img style="align-content: center" class="img-responsive" src="img/Mas_Holdings_Logo.png">-->
                     <div class="form-group">
-                        <h1 style="color: #3c8dbc" id="topic"><center>ICHIRO</center></h1>
+                        <h1 style="color: #3c8dbc" id="topic"><center>PAYROLL</center></h1>
                     </div>
                 </div>
                 <!--<h3><center>MAS HOLDINGS</center></h3>-->
