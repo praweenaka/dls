@@ -8,6 +8,45 @@ if ((substr($_SERVER['REMOTE_ADDR'], 1, 9)) == "192.168.5") {
 
 function get_title($url) {
 
+
+//    if ($url == "Approve_Security") {
+//        return 'Approve_Security';
+//        exit();
+//    }
+
+
+    if ($url == "food_MenuMaster") {
+        return 'food MenuMaster';
+        exit();
+    }
+    if ($url == "food_MenuMasterVIP") {
+        return 'food MenuMaster VIP';
+        exit();
+    }
+    if ($url == "kod_register") {
+        return 'kod Register';
+        exit();
+    }
+    if ($url == "kotEntry") {
+        return 'Kot Entry';
+        exit();
+    }
+    if ($url == "payment") {
+        return 'Report';
+        exit();
+    }
+    if ($url == "kot_Approval") {
+        return 'Kot Approval';
+        exit();
+    }
+    if ($url == "Receipt") {
+        return 'Receipt';
+        exit();
+    }
+    if ($url == "repo_all") {
+        return 'Report All';
+        exit();
+    }
     if ($url == "new_user") {
         return 'New User';
         exit();
@@ -15,28 +54,36 @@ function get_title($url) {
     if ($url == "user_p") {
         return 'User Permission';
         exit();
-    } 
-    if ($url == "sales_report") {
-        return 'Sales Report';
+    }
+    if ($url == "food_MenuMasterSpecial") {
+        return 'Food Menu Master Special';
         exit();
     }
-    if ($url == "sales_inv") {
-        return 'Create Invoice';
+    if ($url == "approve_by") {
+        return 'Approve By';
         exit();
     }
-    
+    if ($url == "approve_by_canteen") {
+        return 'Approve By Canteen';
+        exit();
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title><?php echo get_title($_GET['url']); ?></title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap_custom.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap-multiselect.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="dist/css/font-awesome-4.7.0/css/font-awesome.min.css">  
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
@@ -50,15 +97,7 @@ function get_title($url) {
 
         <!-- Date Picker -->
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-        <!--vender-->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-        <link href="vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="js1/user.js" type="text/javascript"></script>
+
 
         <style>
             .form-group {
@@ -67,12 +106,12 @@ function get_title($url) {
         </style>
     </head>
 
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-red sidebar-mini">
         <div class="wrapper">
 
             <header class="main-header">
                 <!-- Logo -->
-                <a style="font-size: 15px;" href="home.php" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b></b></span> <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>ICHIRO</b></span>ICHIRO</a>
+                <a style="font-size: 12px;" href="home.php" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b></b></span> <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>KFH</b></span> KFH</a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -93,13 +132,18 @@ function get_title($url) {
                                     <span class="hidden-xs"><?php echo $_SESSION['CURRENT_USER']; ?></span>
                                     <!--<a onclick="logout();" class="btn btn-success btn-file">Sign out</a>-->
                                 </a>
-                                <ul class="dropdown-menu"> 
-                                    <li class="user-header">
-                                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                                        <p>
-                                        </p>
-                                    </li>  
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <!--                                    <li class="user-header">
+                                                                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    
+                                                                            <p>
+                                                                            </p>
+                                                                        </li>-->
+                                    <!-- Menu Body -->
+                                    <!--                                    <li class="user-body">
+                                    
+                                                                        </li>-->
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
@@ -110,7 +154,7 @@ function get_title($url) {
 //                                                echo "<a target='_blank' href=\"http:\\\\124.43.17.130:8090\mspace\" class='btn btn-primary btn-file'>Myspace</a>";
 //                                            }
                                             ?>
-                                            <!--<a href="../index.php" class="btn btn-success btn-file" >View Web</a>--> 
+
                                         </div>
                                         <div class="pull-right">
                                             <a onclick="logout();" class="btn btn-success btn-file">Sign out</a>
@@ -170,8 +214,8 @@ function get_title($url) {
 
                         $mgroup = "";
                         include './connection_sql.php';
-//                        $sql = "select * from view_menu where username ='" . $_SESSION["CURRENT_USER"] . "' and doc_view='1' and grp!='' order by grp,docid";
-                        $sql = "select * from view_menu where username ='" . $_SESSION["CURRENT_USER"] . "'  and doc_view='1' order by grp,docid";
+                        $sql = "select * from view_menu where username ='" . $_SESSION["CURRENT_USER"] . "' and doc_view='1' and grp!='' order by grp,docid";
+
                         foreach ($conn->query($sql) as $row1) {
                             if ($mgroup != $row1['grp']) {
                                 if ($mgroup != "") {

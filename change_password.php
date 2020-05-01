@@ -42,14 +42,14 @@ include './connection_sql.php';
                     </div>
                 </div>
                 <div class="form-group">
-                        <label class="col-sm-2 control-label">User Type</label>
+                        <label class="col-sm-2 control-label">User Credit Department</label>
                     <div class="col-sm-2">
                         
                         <?php
-                        $sql = "select user_type from user_mast where user_name ='" . $_SESSION["CURRENT_USER"] . "'";
+                        $sql = "select user_depart from user_mast where user_name ='" . $_SESSION["CURRENT_USER"] . "'";
                         $result = $conn->query($sql);
                         $row = $result->fetch();
-                        echo"<input type=\"text\"  id=\"creditCombo\" value=\"" . $row["user_type"] . "\" disabled class=\"form-control input-sm\"/>";
+                        echo"<input type=\"text\"  id=\"creditCombo\" value=\"" . $row["user_depart"] . "\" disabled class=\"form-control input-sm\"/>";
                         ?>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ include './connection_sql.php';
 
 </section>
 
-<script src="js1/change_password.js">
+<script src="js/change_password.js">
 
 </script>
 

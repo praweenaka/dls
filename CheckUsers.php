@@ -93,28 +93,76 @@ if ($_GET["Command"] == "save_inv") {
     if ($row1 = $result->fetch()) {
         echo "User Found !!!";
     } else {
-        $sql = "insert into user_mast(user_name,user_type, password,U_email) values ('" . $_GET["user_name"] . "', '" . $_GET["user_type"] . "', '" . $_GET["password"] . "', '" . $_GET["U_email"] . "')";
+        $sql = "insert into user_mast(user_name,user_type, password,U_email,R_email) values ('" . $_GET["user_name"] . "', '" . $_GET["user_type"] . "', '" . $_GET["password"] . "', '" . $_GET["U_email"] . "', '" . $_GET["R_email"] . "')";
+//        echo $sql;
         $result = $conn->query($sql);
-        echo "Saved";
+//        echo "Saved";
+
+        date_default_timezone_set('Asia/Colombo');
+
+      
+
+        $sql = "select * from user_mast where user_name='" . $_GET["user_name"] . "'";
+        $result = $conn->query($sql);
+//        echo $sql;
+        if ($row = $result->fetch()) {
+
+          
+        }
+
+        $table = "";
+        $table .= "<table style = 'width: 660px;' class = 'table1'>
+                    <tr>
+                    <th class = 'bottom head' colspan = '3'><center>Unichela Biyagama</center></th>
+                    </tr>
+
+                    <tr>
+                    <th class = 'bottom head' colspan = '3'><center>Kot System Login Details</center></th>
+                    </tr>
+                    <tr>
+                    <th class = 'bottom head' colspan = '3'><center></center></th>
+                    </tr>
+                    <tr>
+                    <th class = 'bottom head' colspan = '3'><center></center></th>
+                    </tr>
+                    <tr>
+                    <th class = 'bottom head' colspan = '3'><center></center></th>
+                    </tr>
+                    </table>";
+
+        $table .= "<table style = 'width: 660px;' class = 'table1'><tr>
+                    <th style = 'width: 40px;' class = 'left'>User Name :</th>
+                    <th style = 'width: 200px;' class = 'left'>" . $_GET['user_name'] . "</th>
+
+                    </tr></table>";
+
+        $table .= "<table style = 'width: 660px;' class = 'table1'><tr>
+                    <th style = 'width: 40px;' class = 'left'>Password :</th>
+                    <th style = 'width: 200px;' class = 'left'>" . $_GET['password'] . "</th>
+
+                    </tr></table>";
+
+     
+
+
+      
+
+       
+            echo "Saved";
+       
     }
 }
 
 if ($Command == "logout") {
-   $time_now = mktime(date('h') + 5, date('i') + 30, date('s'));
-    $time = date('Y-m-d H:i:s');
+
     $today = date('Y-m-d');
+    $domain = $_SERVER['HTTP_HOST'];
+    setcookie('user', "", 1, "/", $domain);
 
 
-    $sql = "UPDATE loging
-			  SET Logout_Time='" . $time . "'
-			  WHERE Sessioan_Id='" . $_SESSION['sessionId'] . "'";
-
-    $result = $conn->query($sql);
 
     session_unset();
     session_destroy();
-    $_SESSION['UserName'] = "";
-    $_SESSION["CURRENT_USER"] = "";
 }
 
 
@@ -132,15 +180,19 @@ if ($_GET["Command"] == "getdt") {
     $tb .= "<tr>";
     $tb .= "<th style=\"width: 100px;\" class=\"success\">Name</th>";
     $tb .= "<th style=\"width: 200px;\" class=\"success\">User Type</th>";
+    $tb .= "<th style=\"width: 100px;\" class=\"success\">User Department</th>";
     $tb .= "<th style=\"width: 100px;\" class=\"success\">User Email</th>";
+    $tb .= "<th style=\"width: 200px;\" class=\"success\">Department Head Mail</th>";
 
     $tb .= "</tr>";
 
     foreach ($conn->query($sql) as $row) {
         $tb .= "<tr>";
-        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['U_email'] . "')\">" . $row['user_name'] . "</td>";
-        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['U_email'] . "')\">" . $row['user_type'] . "</td>";
-        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['U_email'] . "')\">" . $row['U_email'] . "</td>";
+        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['user_depart'] . "','" . $row['U_email'] . "','" . $row['R_email'] . "')\">" . $row['user_name'] . "</td>";
+        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['user_depart'] . "','" . $row['U_email'] . "','" . $row['R_email'] . "')\">" . $row['user_type'] . "</td>";
+        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['user_depart'] . "','" . $row['U_email'] . "','" . $row['R_email'] . "')\">" . $row['user_depart'] . "</td>";
+        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['user_depart'] . "','" . $row['U_email'] . "','" . $row['R_email'] . "')\">" . $row['U_email'] . "</td>";
+        $tb .= "<td onclick=\"getcode('" . $row['user_name'] . "','" . $row['user_type'] . "','" . $row['user_depart'] . "','" . $row['U_email'] . "','" . $row['R_email'] . "')\">" . $row['R_email'] . "</td>";
         $tb .= "</tr>";
     }
     $tb .= "</table>";
@@ -154,7 +206,7 @@ if ($_GET["Command"] == "edit") {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->beginTransaction();
 
-        $sql2 = "update user_mast set user_type = '" . $_GET['user_type'] . "' ,U_email = '" . $_GET['U_email'] . "'  where user_name = '" . $_GET['user_name'] . "'";
+        $sql2 = "update user_mast set user_type = '" . $_GET['user_type'] . "',user_depart = '" . $_GET['user_depart'] . "',U_email = '" . $_GET['U_email'] . "',R_email = '" . $_GET['R_email'] . "' where user_name = '" . $_GET['user_name'] . "'";
 
         $result = $conn->query($sql2);
 
@@ -174,4 +226,5 @@ if ($_GET["Command"] == "delete") {
 //    $conn->commit();
     echo "Delete";
 }
+
 ?>

@@ -1,25 +1,36 @@
 <?php
 include './CheckCookie.php';
-if ($_SESSION['UserName'] == "") {
-    header('Location: ' . "index.php");
-    exit();
-}
 require_once ('connection_sql.php');
 $cookie_name = "user";
-if (isset($_COOKIE[$cookie_name])) {
-    $mo = chk_cookie($_COOKIE[$cookie_name]);
-    if ($mo != "ok") {
-        header('Location: ' . "index.php");
-        exit();
-    }
-} else {
-    header('Location: ' . "index.php");
-    exit();
-}
+// if (isset($_COOKIE[$cookie_name])) {
+//     $mo = chk_cookie($_COOKIE[$cookie_name]);
+//     if ($mo != "ok") {
+//         header('Location: ' . "index.php");
+//         exit();
+//     }
+// } else {
+//     header('Location: ' . "index.php");
+//     exit();
+// }
 $mtype = "";
 include "header.php";
 
 if (isset($_GET['url'])) {
+
+
+    //Master File
+    
+    if ($_GET['url'] == "employer") {
+        include_once './employer.php';
+    }
+    if ($_GET['url'] == "category_master") {
+        include_once './category.php';
+    }
+    if ($_GET['url'] == "sub_category_master") {
+        include_once './sub_category.php';
+    }
+
+
 
     if ($_GET['url'] == "new_user") {
         include_once './new_user.php';
@@ -27,17 +38,28 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "user_p") {
         include_once './user_permission.php';
     }
-
     if ($_GET['url'] == "change_password") {
         include_once './change_password.php';
     }
+
+    if($_GET['url'] == 'register'){
+        include_once './payroll_register.php';
+    }
+    if($_GET['url'] == 'main_report'){
+        include_once './main_report.php';
+    }
+
+     if($_GET['url'] == 'epf_main'){
+        include_once './epfmain.php';
+    }
+
     
-    if ($_GET['url'] == "sales_report") {
-        include_once './sales_report.php';
+    
+    if ($_GET['url'] == "create") {
+        include_once './create.php';
     }
-    if ($_GET['url'] == "sales_inv") {
-        include_once './sales_inv.php';
-    }
+       
+    
 } else {
 
     include_once './fpage.php';
@@ -56,17 +78,17 @@ include_once './footer.php';
 <script src="bootstrap/js/bootstrap-multiselect.js"></script>
 <script  type="text/javascript">
 
-//    $(function () {
-//
-//
-//
-//
-//        $(document).ready(function () {
-//            $('#brand').multiselect();
-//        });
-//
-//
-//    });
+    $(function () {
+
+
+
+
+        $(document).ready(function () {
+            $('#brand').multiselect();
+        });
+
+
+    });
 
 </script>
 <script type="text/javascript">
@@ -78,7 +100,7 @@ include_once './footer.php';
     });
 </script>
 <?php
-//include './autocomple_gl.php';
+include './autocomple_gl.php';
 ?>
 
 <!--<link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css" />
@@ -87,38 +109,18 @@ include_once './footer.php';
 <script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="js/comman.js"></script>
 
-<script src="vendor/metisMenu/metisMenu.min.js"></script>
-
-<!--DataTables JavaScript--> 
-<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-</script>
 
 <!-- FastClick -->
-<!--<script src="plugins/fastclick/fastclick.js"></script>    minified 
+<script src="plugins/fastclick/fastclick.js"></script>   <!-- minified -->
 <script src="plugins/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
-<script src="plugins/recaptcha_4.2.0/index.php"></script>-->
+<script src="plugins/recaptcha_4.2.0/index.php"></script>
 <script>
 
-//    $(function () {
-//
-//
-//
-//
-//        $(document).ready(function () {
-//            $('#approveCombo').multiselect();
-//        });
-//
-//
-//    });
+    $(function () {
+        $(document).ready(function () {
+            $('#approveCombo').multiselect();
+        });
+    });
 
 </script>
 <!-- AdminLTE App -->
@@ -136,15 +138,3 @@ include_once './footer.php';
     $("body").addClass("sidebar-collapse");
 </script>    
 
-<script>
-    var myVar = setInterval(myTimer, 1000);
-
-    function myTimer() {
-
-        var d = new Date();
-//        var dd = d.toLocaleDateString();
-        var tt = d.toLocaleTimeString();
-        document.getElementById("time").innerHTML = tt;
-    }
-
-</script>

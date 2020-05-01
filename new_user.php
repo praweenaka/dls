@@ -50,7 +50,7 @@
                     <div class="col-sm-2">
                         <?php
                         echo"<select id = \"user_type\" class = \"form-control input-sm\">";
-                        $sql = "select * from user_mast";
+                        $sql = "select * from user_type";
                         foreach ($conn->query($sql) as $row) {
                             echo "<option value='" . trim($row["user_type"]) . "'>" . $row["user_type"] . "</option>";
                         }
@@ -58,7 +58,19 @@
                         ?>
                     </div>
                 </div>	
-
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="txt_password1">User Credit Department</label>
+                    <div class="col-sm-2">
+                        <?php
+//                        echo"<select id = \"user_depart\" class = \"form-control input-sm\">";
+//                        $sql = "select * from creditdepart_master";
+//                        foreach ($conn->query($sql) as $row) {
+//                            echo "<option value='" . trim($row["user_depart"]) . "'>" . $row["user_depart"] . "</option>";
+//                        }
+//                        echo"</select>";
+                        ?>
+                    </div>
+                </div>	
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="txt_password">User Mail</label>
@@ -66,7 +78,14 @@
                         <input type="text" placeholder="User Mail" id="umail" class="form-control">
 
                     </div>
-                </div> 
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="txt_password">Department Head Mail</label>
+                    <div class="col-sm-3">
+                        <input type="text" placeholder="Department Head Mail" id="rmail" class="form-control">
+
+                    </div>
+                </div>
             </div>
 
             <div id="itemdetails"></div>
@@ -75,5 +94,5 @@
 
 </section>
 
-<script src="js1/create_user.js"></script>
+<script src="js/create_user.js"></script>
 <script>newent();</script>

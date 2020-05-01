@@ -75,7 +75,7 @@ require_once("./connection_sql.php");
 
 </section>
 
-<script src="js1/create_user.js"></script>
+<script src="js/create_user.js"></script>
 
 
 
