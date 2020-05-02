@@ -79,8 +79,8 @@ include_once './connection_sql.php';
         </thead>
         <tbody>
                 <?php
-                $sql = "SELECT * from payroll_register where cancel='0' ";
-                $sql = $sql . " order by employeeNo limit 50";
+                $sql = "SELECT * from empmaster where cancel='0' ";
+                $sql = $sql . " order by EPFNO limit 50";
                 
                 $stname = "";
                 if (isset($_GET['stname'])) {
@@ -88,11 +88,11 @@ include_once './connection_sql.php';
                 }
 
                 foreach ($conn->query($sql) as $row) {
-                    $cuscode = $row['employeeNo'];
+                    $cuscode = $row['EPFNO'];
                     echo "<tr>    
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['employeeNo'] . "</a></td>
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['nameInitials'] . "</a></td>
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['address'] . "</a></td>
+                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['EPFNO'] . "</a></td>
+                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['initi'] . "</a></td>
+                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['addr'] . "</a></td>
                               <td onclick=\"custno('$cuscode', '$stname');\">" . $row['nic'] . "</a></td>
                         </tr>";
                 }

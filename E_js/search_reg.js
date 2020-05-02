@@ -73,33 +73,33 @@ function passcusresult_quot()
 
             if (stname == "emp1") {
 
-                opener.document.getElementById('txt_epf').value=obj.employeeNo;
+                opener.document.getElementById('txt_epf').value=obj.EPFNO;
                 opener.document.getElementById('txt_joinDt').value=obj.joinDate;
             }
 
             if (stname == "reg") {
 
-                opener.document.getElementById('employeeno_txt').value=obj.employeeNo;
-                opener.document.getElementById('initials_txt').value=obj.initilas;
-                opener.document.getElementById('namewithini_txt').value=obj.nameInitials;
-                opener.document.getElementById('address_txt').value=obj.address;
+                opener.document.getElementById('employeeno_txt').value=obj.EPFNO;
+                opener.document.getElementById('initials_txt').value=obj.initi;
+                opener.document.getElementById('namewithini_txt').value=obj.Name;
+                opener.document.getElementById('address_txt').value=obj.addr;
                 opener.document.getElementById('joindate_txt').value=obj.joinDate;
-                opener.document.getElementById('mobileno_txt').value=obj.mobileNo;
-                opener.document.getElementById('status_txt').value=obj.status;
+                opener.document.getElementById('mobileno_txt').value=obj.perpno;
+                opener.document.getElementById('status_txt').value=obj.mstatus;
                 opener.document.getElementById('homephone_txt').value=obj.homePhoneNo;
                 opener.document.getElementById('spouse_txt').value=obj.spouse;
-                opener.document.getElementById('contactperson_txt').value=obj.contactPerson;
-                opener.document.getElementById('nochild_txt').value=obj.noOfChilds;
+                opener.document.getElementById('contactperson_txt').value=obj.conperson;
+                opener.document.getElementById('nochild_txt').value=obj.nochil;
                 opener.document.getElementById('email_txt').value=obj.email;
-                opener.document.getElementById('nameofclild_txt').value=obj.nameOfChilds;
-                opener.document.getElementById('designation_txt').value=obj.designation;
-                opener.document.getElementById('dob_txt').value=obj.dateOfBirth;
-                opener.document.getElementById('bank_txt').value=obj.college;
+                opener.document.getElementById('nameofclild_txt').value=obj.familymem;
+                opener.document.getElementById('designation_txt').value=obj.Designation;
+                opener.document.getElementById('dob_txt').value=obj.dtbirth;
+                opener.document.getElementById('bank_txt').value=obj.school;
                 opener.document.getElementById('refdt_txt').value=obj.nic;
-                opener.document.getElementById('preemployee_txt').value=obj.preEmployment;
+                opener.document.getElementById('preemployee_txt').value=obj.prevousem;
                 opener.document.getElementById('department_txt').value=obj.department;
                 opener.document.getElementById('religion_txt').value=obj.religion;
-                opener.document.getElementById('qtyofemployees').value=obj.qtyOfEmployees;
+                opener.document.getElementById('qtyofemployees').value=obj.qulfic;
                 opener.document.getElementById('remark').value=obj.remark;
             }
 
