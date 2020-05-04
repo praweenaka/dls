@@ -14,7 +14,9 @@
 
 
                 <div class="form-group-sm">
-
+<a  onclick="location.reload();" class="btn btn-default btn-sm">
+                        <span class="fa fa-user-plus"></span> &nbsp; New
+                    </a>
 
                     <a  onclick="save_inv();" class="btn btn-success btn-sm">
                         <span class="fa fa-save"></span> &nbsp; SAVE

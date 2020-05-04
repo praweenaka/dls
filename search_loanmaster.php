@@ -13,7 +13,7 @@ include_once './connection_sql.php';
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
 
-            <script language="JavaScript" src="E_js/search_epfMain.js"></script>
+            <script language="JavaScript" src="js/search_loanmaster.php"></script>
             <!--<script language="JavaScript" src="js/search_payment_voucher.js"></script>-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
@@ -70,16 +70,13 @@ include_once './connection_sql.php';
          <table id="example" class="mdl-data-table" style="width:100%">
         <thead>
             <tr>
-                    <th>EPF No</th>
-                    <th>EPF No 1</th>
-                    <th>Join Date</th>
-                    <th>Basic</th>
+                    <th>EPF No</th> 
                   
                 </tr>
         </thead>
         <tbody>
                 <?php
-                $sql = "SELECT * from empsalmaster where cancel='0' ";
+                $sql = "SELECT * from loan_ismas where cancel='0' ";
                 $sql = $sql . " order by EPFNO limit 50";
                 
                 $stname = "";
@@ -90,10 +87,7 @@ include_once './connection_sql.php';
                 foreach ($conn->query($sql) as $row) {
                     $cuscode = $row['EPFNO'];
                     echo "<tr>    
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['EPFNO'] . "</a></td>
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['Name'] . "</a></td>
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['dt_join'] . "</a></td>
-                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['Basic'] . "</a></td>
+                              <td onclick=\"custno('$cuscode', '$stname');\">" . $row['EPFNO'] . "</a></td> 
                         </tr>";
                 }
                 ?>

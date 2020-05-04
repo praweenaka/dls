@@ -49,10 +49,16 @@ if (isset($_GET['url'])) {
         include_once './main_report.php';
     }
 
-     if($_GET['url'] == 'epf_main'){
+    if($_GET['url'] == 'epf_main'){
         include_once './epfmain.php';
     }
+ if($_GET['url'] == 'payprocess'){
+        include_once './payprocess.php';
+    }
 
+    if($_GET['url'] == 'loanmaster'){
+        include_once './loanmaster.php';
+    }
     
     
     if ($_GET['url'] == "create") {

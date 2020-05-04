@@ -21,7 +21,7 @@ if ($_GET["Command"] == "pass_quot") {
 
     $empcode = $_GET["employueeno"];
 
-    $sql = "SELECT * from EMPSALMASTER where EPFNO ='" . $empcode . "'";
+    $sql = "SELECT * from empsalmaster where EPFNO ='" . $empcode . "'";
 
 
     $sql = $conn->query($sql);

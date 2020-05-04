@@ -14,14 +14,12 @@
 
 
                 <div class="form-group-sm">
-
-
-                    <a  onclick="save_inv();" class="btn btn-success btn-sm">
+                    <a  onclick="location.reload();" class="btn btn-default btn-sm">
+                        <span class="fa fa-user-plus"></span> &nbsp; New
+                    </a> 
+                     <a  onclick="save_inv();" class="btn btn-success btn-sm">
                         <span class="fa fa-save"></span> &nbsp; SAVE
                     </a>
-
-
-
                     <a onclick="//delete1();" class="btn btn-danger btn-sm" disabled="disabled">
                         <span class="glyphicon glyphicon-trash"></span> &nbsp; DELETE
                     </a>

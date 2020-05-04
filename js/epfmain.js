@@ -154,7 +154,7 @@ xmlHttp = GetXmlHttpObject();
                   "Main": "SAVE",
                   "Sub": "",
                   "Flag": "",
-                  "Table": "salarycal",
+                  "Table": "empsalmaster",
                   "Num": 6,
                   "Status": true,
                   "Message": "Create Save",
