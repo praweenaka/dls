@@ -47,7 +47,7 @@ session_start();
                 <div class="form-group"></div>
                 <div class="form-group-sm"> 
                     <div class="col-sm-2">
-                        <input type="date"   name="month" id="month" value="<?php echo date('Y-m-d'); ?>" class="form-control  input-sm">
+                        <input type="text"   name="month" id="month" value="<?php echo date('Y-m'); ?>" class="form-control dt input-sm">
                     </div>
                     <div class="col-sm-3">
                         <input type="button" name="searchitem" id="searchitem" value="Process" onclick="process();" class="btn btn-primary btn-sm">
@@ -67,3 +67,14 @@ session_start();
 
 <!-- <script>newent();</script> -->
 
+<script type="text/javascript">
+    $(function () {
+        $('.dt').datepicker({
+            format: 'yyyy-mm'
+        });
+
+
+    });
+
+
+</script>

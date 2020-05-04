@@ -31,12 +31,15 @@ function lost_focus(key) {
 
 function print_sheet() {
 
-	var url = "kk.php";
+	var url = "salarysheet.php";
 	url = url + "?month=" + document.getElementById('month').value;
-
-
 	window.open(url, '_blank');
 
+}
+function print_slip() {
 
+	var url = "salaryslip.php";
+	url = url + "?month=" + document.getElementById('month').value;
+	window.open(url, '_blank');
 
 }

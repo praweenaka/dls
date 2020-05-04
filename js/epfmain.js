@@ -239,7 +239,7 @@ function salessaveresult() {
 
 function print() {
 
-    var url = "salaryslip_one.php";
+    var url = "salaryslip.php";
     url = url + "?txt_epf=" + document.getElementById('txt_epf').value;
 
 

@@ -35,8 +35,18 @@ include './connection_sql.php';
     // $dat = date('H:i:s', $da);
 
     echo "<br>
-
     <table>
+    <tr> 
+    <th width=250px; align='left' ><img src='images/logo.jpg'   height='52' width='242'>   </th>
+    <th width=250px; align='center'><b style='color:#0f4df7'>WINGS LOGISTICS PVT (LTD).</b></th>
+    </tr>
+    <tr>  
+    <th width=150px;</th>
+    <th width=150px; align='center' style='margin-top:4px;'><b>EMPLOYER'S NO A40241</b></th>
+    
+    </tr>
+    </table>
+    <table  > 
     <tr>
     <th width=150px; align='left' >EPF No </th>
     <th width=150px; align='left'><b>:     ". $row["EPFNO"]."</b></th>
@@ -56,7 +66,7 @@ include './connection_sql.php';
     <th width=150px; align='left'></th>
     </tr>
     </table>
-    <table>";
+    <table >";
     $totepf=$row["BASIC"]-$row["salarr"]-$row["NOPAY"];
     $grosspay=1000000;
     $netpay=1000000;
@@ -180,7 +190,7 @@ include './connection_sql.php';
     <td width=150px; align='left'><b>:     ".number_format($totepf*3/100,2)."</b></td>
     <th width=150px;></th>
     <td width=150px;><b>Total Deduction</b></td>
-    <td width=150px; align='left'><b>:     ". $totDid."</b></td>
+    <td width=150px; align='left'><b>:     ". number_format($totDid,2)."</b></td>
     <th width=150px;></th>
     <td width=150px;></td>
     </tr>
