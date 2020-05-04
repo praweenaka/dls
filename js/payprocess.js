@@ -31,7 +31,7 @@ function lost_focus(key) {
 
 function print_sheet() {
 
-	var url = "salarysheet.php";
+	var url = "kk.php";
 	url = url + "?month=" + document.getElementById('month').value;
 
 
