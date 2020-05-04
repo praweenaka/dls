@@ -4,7 +4,13 @@ include './connection_sql.php';
 ?>
 
 
-
+<style >
+ td {
+  border-style: dotted;
+  border-width: 1px; 
+}
+ 
+</style>
 
 
 <?php
@@ -20,11 +26,11 @@ include './connection_sql.php';
 
 
     $month= $_GET["month"];
-
+ 
     // $date1=date("l jS \of F Y h:i:s A");
     $date1=date("F Y ");
 
-    $sql = "SELECT * FROM pro where EPFNO = '" . $epf . "'"; 
+    $sql = "SELECT * FROM pro where SALDATE = '" . $month. "'"; 
     $result = $conn->query($sql);
     $row = $result->fetch();
 
@@ -36,24 +42,10 @@ include './connection_sql.php';
 
     echo "<br>
 
-    <table>
+    <table> 
     <tr>
-    <th width=150px; align='left' >EPF No </th>
-    <th width=150px; align='left'><b>:     ". $row["EPFNO"]."</b></th>
-    <th width=150px;></th>
-    <th width=150px; align'left'>Month </th>
-    <th width=150px; align='left'><b>:     ".$date1."</b></th>
-    <th width=250px;></th>
-    <th width=150px; align='left'></th>
-    </tr>
-    <tr>
-    <th width=150px; align='left' >Name </th>
-    <th width=150px; align='left'><b>:    ". $row["Name"]." </b></th>
-    <th width=150px;></th>
-    <th width=150px; align='left'></th>
-    <th width=150px; align='left'></th>
-    <th width=150px;></th>
-    <th width=150px; align='left'></th>
+    <td width=150px;>Month </td>
+    <td width=150px; align='left'>:     ".$date1."</td> 
     </tr>
     </table>
     <table>
@@ -94,7 +86,7 @@ include './connection_sql.php';
     <td width=150px; align='left'><b>:     ". $row["SP_ALLOW01"]."</b></td> 
     </tr>
     <tr>
-    <td width=150px;>OVER TIME></td>
+    <td width=150px;>OVER TIME</td>
     <td width=150px; align='left'><b>:     ". $row["TMP_OT"]."</b></td> 
     </tr>
     <tr>
@@ -126,8 +118,24 @@ include './connection_sql.php';
     <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>INSU LOAN/td>
+    <td width=150px; align='left'>: ". $row["INSULOAN"]."</td> 
+    </tr>
+    <tr>
+    <td width=150px;>MOBITEL BILL</td>
+    <td width=150px; align='left'>: ". $row["TEM_MobBill"]."</td> 
+    </tr>
+    <tr>
+    <td width=150px;>THFA SOCIATY</td>
+    <td width=150px; align='left'>: ". $row["THFASociaty"]."</td> 
+    </tr>
+    <tr>
+    <td width=150px;>FAS</td>
+    <td width=150px; align='left'>: ". $row["FAS"]."</td> 
+    </tr>
+    <tr>
+    <td width=150px;>SP DEUCTION</td>
+    <td width=150px; align='left'>: ". $row["TMP_SP_DED"]."</td> 
     </tr>
     <tr>
     <td width=150px;>FEST LOAN</td>
@@ -138,38 +146,41 @@ include './connection_sql.php';
     <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>STAMP</td>
+    <td width=150px; align='left'>: ". $row["STAMP"]."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>PAYE</td>
+    <td width=150px; align='left'>: ". $row["PAYESurchage"]."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>TOTAL DEUCTION</td>
+    <td width=150px; align='left'>: ". number_format($TOTALDEDU,2)."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;><B>BALANCE PAY</B></td>
+    <td width=150px; align='left'>: ". number_format($BALANCEPAY*8/100,2)."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>EPF 12%</td>
+    <td width=150px; align='left'>: ". number_format($$TOTAL*12/100,2)."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>EPF 3%</td>
+    <td width=150px; align='left'>: ". number_format($$TOTAL*3/100,2)."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>EPF NO</td>
+    <td width=150px; align='left'>: ". $row["EPFNO"]."</td> 
     </tr>
     <tr>
-    <td width=150px;>FEST LOAN</td>
-    <td width=150px; align='left'>: ". $row["FESTIVAL"]."</td> 
+    <td width=150px;>NAME</td>
+    <td width=150px; align='left'>: ". $row["NAME"]."</td> 
     </tr>
-
+    <tr>
+    <td width=150px;>SIGNATURE</td>
+    <td width=150px; align='left'>: ..............</td> 
+    </tr>
 
 
     </table> 

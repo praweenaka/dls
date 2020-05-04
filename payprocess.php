@@ -47,7 +47,7 @@ session_start();
                 <div class="form-group"></div>
                 <div class="form-group-sm"> 
                     <div class="col-sm-2">
-                        <input type="date"   name="month" id="month" class="form-control  input-sm">
+                        <input type="date"   name="month" id="month" value="<?php echo date('Y-m-d'); ?>" class="form-control  input-sm">
                     </div>
                     <div class="col-sm-3">
                         <input type="button" name="searchitem" id="searchitem" value="Process" onclick="process();" class="btn btn-primary btn-sm">
@@ -65,5 +65,5 @@ session_start();
 
 <script src="js/payprocess.js"></script>
 
-<script>newent();</script>
+<!-- <script>newent();</script> -->
 
