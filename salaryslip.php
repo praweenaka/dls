@@ -46,7 +46,7 @@ include './connection_sql.php';
     
     </tr>
     </table>
-    <table border='1' > 
+    <table border='1'> 
     <tr>
     <th width=150px; align='left' >EPF No </th>
     <th width=150px; align='left'><b>:     ". $row["EPFNO"]."</b></th> 

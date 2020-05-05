@@ -8,41 +8,8 @@ if ((substr($_SERVER['REMOTE_ADDR'], 1, 9)) == "192.168.5") {
 
 function get_title($url) {
 
-
-//    if ($url == "Approve_Security") {
-//        return 'Approve_Security';
-//        exit();
-//    }
-
-
-    if ($url == "food_MenuMaster") {
-        return 'food MenuMaster';
-        exit();
-    }
-    if ($url == "food_MenuMasterVIP") {
-        return 'food MenuMaster VIP';
-        exit();
-    }
-    if ($url == "kod_register") {
-        return 'kod Register';
-        exit();
-    }
-    if ($url == "kotEntry") {
-        return 'Kot Entry';
-        exit();
-    }
-    if ($url == "payment") {
-        return 'Report';
-        exit();
-    }
-    if ($url == "kot_Approval") {
-        return 'Kot Approval';
-        exit();
-    }
-    if ($url == "Receipt") {
-        return 'Receipt';
-        exit();
-    }
+   
+   
     if ($url == "repo_all") {
         return 'Report All';
         exit();
@@ -55,51 +22,40 @@ function get_title($url) {
         return 'User Permission';
         exit();
     }
-    if ($url == "food_MenuMasterSpecial") {
-        return 'Food Menu Master Special';
-        exit();
-    }
-    if ($url == "approve_by") {
-        return 'Approve By';
-        exit();
-    }
-    if ($url == "approve_by_canteen") {
-        return 'Approve By Canteen';
-        exit();
-    }
+    
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
 
-        <title><?php echo get_title($_GET['url']); ?></title>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap_custom.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap-multiselect.css">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="dist/css/font-awesome-4.7.0/css/font-awesome.min.css">  
+    <title><?php echo get_title($_GET['url']); ?></title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap_custom.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-multiselect.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="dist/css/font-awesome-4.7.0/css/font-awesome.min.css">  
 
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-        <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-        <!-- Ionicons -->
-        <!--<link rel="stylesheet" href="css/ionicons/css/ionicons.min.css">-->
-        <!-- Morris chart -->
-        <link rel="stylesheet" href="plugins/morris/morris.css">
+           folder instead of downloading all of them to reduce the load. -->
+           <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+           <!-- Ionicons -->
+           <!--<link rel="stylesheet" href="css/ionicons/css/ionicons.min.css">-->
+           <!-- Morris chart -->
+           <link rel="stylesheet" href="plugins/morris/morris.css">
 
-        <!-- Date Picker -->
-        <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+           <!-- Date Picker -->
+           <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 
 
-        <style>
+           <style>
             .form-group {
                 margin-bottom: 8px;
             }
@@ -140,10 +96,10 @@ function get_title($url) {
                                                                             <p>
                                                                             </p>
                                                                         </li>-->
-                                    <!-- Menu Body -->
+                                                                        <!-- Menu Body -->
                                     <!--                                    <li class="user-body">
                                     
-                                                                        </li>-->
+                                    </li>-->
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
@@ -197,81 +153,81 @@ function get_title($url) {
                                 <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                                     <i class="fa fa-search"></i>
                                 </button> </span>
-                        </div>
-                    </form>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
-                    <ul class="sidebar-menu">
-                        <li class="header">
-                            MAIN MENU
-                        </li>
-                        <?php
-                        if (isset($_GET['url'])) {
-                            $murl = $_GET['url'];
-                        } else {
-                            $murl = "";
-                        }
-
-                        $mgroup = "";
-                        include './connection_sql.php';
-                        $sql = "select * from view_menu where username ='" . $_SESSION["CURRENT_USER"] . "' and doc_view='1' and grp!='' order by grp,docid";
-
-                        foreach ($conn->query($sql) as $row1) {
-                            if ($mgroup != $row1['grp']) {
-                                if ($mgroup != "") {
-                                    echo "</ul>";
-                                    echo "</li>";
-                                }
-                                echo "<li class='treeview'>
-                                <a href='#'><i class='" . trim($row1['icon_class']) . "'></i> <span>" . $row1['grp'] . "</span> <i class='fa fa-angle-left pull-right'></i> </a>
-                                <ul class='treeview-menu'>";
-                            }
-
-                            $mgroup = $row1['grp'];
-                            if ($murl == $row1['name']) {
-                                echo "<li class='active'>";
+                            </div>
+                        </form>
+                        <!-- /.search form -->
+                        <!-- sidebar menu: : style can be found in sidebar.less -->
+                        <ul class="sidebar-menu">
+                            <li class="header">
+                                MAIN MENU
+                            </li>
+                            <?php
+                            if (isset($_GET['url'])) {
+                                $murl = $_GET['url'];
                             } else {
-                                echo "<li>";
+                                $murl = "";
                             }
-                            echo "<a href='home.php?url=" . trim($row1['name']) . "'><i class='fa fa-circle-o'></i>" . trim($row1['docname']) . "</a></li>";
-                        }
-                        echo "</ul>";
-                        echo "</li>";
-                        ?>
+
+                            $mgroup = "";
+                            include './connection_sql.php';
+                            $sql = "select * from view_menu where username ='" . $_SESSION["CURRENT_USER"] . "' and doc_view='1' and grp!='' order by grp,docid";
+
+                            foreach ($conn->query($sql) as $row1) {
+                                if ($mgroup != $row1['grp']) {
+                                    if ($mgroup != "") {
+                                        echo "</ul>";
+                                        echo "</li>";
+                                    }
+                                    echo "<li class='treeview'>
+                                    <a href='#'><i class='" . trim($row1['icon_class']) . "'></i> <span>" . $row1['grp'] . "</span> <i class='fa fa-angle-left pull-right'></i> </a>
+                                    <ul class='treeview-menu'>";
+                                }
+
+                                $mgroup = $row1['grp'];
+                                if ($murl == $row1['name']) {
+                                    echo "<li class='active'>";
+                                } else {
+                                    echo "<li>";
+                                }
+                                echo "<a href='home.php?url=" . trim($row1['name']) . "'><i class='fa fa-circle-o'></i>" . trim($row1['docname']) . "</a></li>";
+                            }
+                            echo "</ul>";
+                            echo "</li>";
+                            ?>
 
 
 
-                </section>
-                <!-- /.sidebar -->
-            </aside>
-            <!-- Control Sidebar -->
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Create the tabs -->
-                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+                    <!-- Control Sidebar -->
+                    <!-- Control Sidebar -->
+                    <aside class="control-sidebar control-sidebar-dark">
+                        <!-- Create the tabs -->
+                        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <!-- Home tab content -->
-                    <div class="tab-pane" id="control-sidebar-home-tab">
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!-- Home tab content -->
+                            <div class="tab-pane" id="control-sidebar-home-tab">
 
-                        <!-- /.control-sidebar-menu -->
+                                <!-- /.control-sidebar-menu -->
 
 
-                        <!-- /.control-sidebar-menu -->
+                                <!-- /.control-sidebar-menu -->
 
-                    </div>
-                    <!-- /.tab-pane -->
-                    <!-- Stats tab content -->
-                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-                    <!-- /.tab-pane -->
-                    <!-- Settings tab content -->
-                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                            </div>
+                            <!-- /.tab-pane -->
+                            <!-- Stats tab content -->
+                            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                            <!-- /.tab-pane -->
+                            <!-- Settings tab content -->
+                            <div class="tab-pane" id="control-sidebar-settings-tab">
 
-                    </div>
-                    <!-- /.tab-pane -->
-                </div>
-            </aside>
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                    </aside>
+                    <!-- Content Wrapper. Contains page content -->
+                    <div class="content-wrapper">

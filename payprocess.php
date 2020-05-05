@@ -67,14 +67,4 @@ session_start();
 
 <!-- <script>newent();</script> -->
 
-<script type="text/javascript">
-    $(function () {
-        $('.dt').datepicker({
-            format: 'yyyy-mm'
-        });
-
-
-    });
-
-
-</script>
+ 

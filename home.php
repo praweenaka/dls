@@ -19,7 +19,7 @@ if (isset($_GET['url'])) {
 
 
     //Master File
-    
+
     if ($_GET['url'] == "employer") {
         include_once './employer.php';
     }
@@ -52,19 +52,22 @@ if (isset($_GET['url'])) {
     if($_GET['url'] == 'epf_main'){
         include_once './epfmain.php';
     }
- if($_GET['url'] == 'payprocess'){
+    if($_GET['url'] == 'payprocess'){
         include_once './payprocess.php';
     }
 
     if($_GET['url'] == 'loanmaster'){
         include_once './loanmaster.php';
     }
+    if($_GET['url'] == 'employeetrans'){
+        include_once './employeetrans.php';
+    }
     
     
     if ($_GET['url'] == "create") {
         include_once './create.php';
     }
-       
+
     
 } else {
 
@@ -100,47 +103,48 @@ include_once './footer.php';
 <script type="text/javascript">
     $(function () {
         $('.dt').datepicker({
-            format: 'yyyy-mm-dd',
+            format: 'yyyy-mm',
             autoclose: true
         });
     });
 </script>
+
 <?php
 include './autocomple_gl.php';
 ?>
 
 <!--<link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css" />
-<script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script> -->
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script> -->
 
-<script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="js/comman.js"></script>
+    <script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/comman.js"></script>
 
 
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>   <!-- minified -->
-<script src="plugins/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
-<script src="plugins/recaptcha_4.2.0/index.php"></script>
-<script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.js"></script>   <!-- minified -->
+    <script src="plugins/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+    <script src="plugins/recaptcha_4.2.0/index.php"></script>
+    <script>
 
-    $(function () {
-        $(document).ready(function () {
-            $('#approveCombo').multiselect();
+        $(function () {
+            $(document).ready(function () {
+                $('#approveCombo').multiselect();
+            });
         });
-    });
 
-</script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<script src="js/user.js"></script>
-
+    </script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <script src="js/user.js"></script>
 
 
 
-<script>
-    $("body").addClass("sidebar-collapse");
-</script>    
+
+    <script>
+        $("body").addClass("sidebar-collapse");
+    </script>    
 
