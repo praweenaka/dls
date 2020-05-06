@@ -65,7 +65,7 @@ include './connection_sql.php';
     <td width=150px;>Basic Salary</td>
     <td width=150px; align='left'><b>:     ". $row["BASIC"]."</b></td> 
     <td width=150px;>E.P.F 8%</td>
-    <td width=150px; align='left'><b>:     ". number_format($totepf,2)."</b></td> 
+    <td width=150px; align='left'><b>:     ". number_format($totepf*8/100,2)."</b></td> 
     </tr>
     <tr>
     <td width=150px;>Salary Arrears</td>

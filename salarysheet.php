@@ -60,7 +60,8 @@
             foreach ($conn->query($sql) as $row) {
                 $TOTAL=$row['BASIC']+$row['ALLOW2']+$row['ALLOW1'];
                 $TOTALPF=$TOTAL-$row['TEM_NOPAY'];
-                $GROSSPAY=$TOTALPF-$row['SP_ALLOW01']-$row['SP_ALLOW02']-$row['TMP_OT']-$row['TMP_SP_ALLO'];
+                // $GROSSPAY=$TOTALPF+$row['SP_ALLOW01']+$row['SP_ALLOW02']+$row['TMP_OT']+$row['TMP_SP_ALLO'];
+                $GROSSPAY=$TOTALPF+$row['TMP_OT'];
                 $TOTALDEDU=$row['TEM_SalAdvance']+$row['LOAN01']+$row['LOAN02']+$row['LOAN03']+$row['FESTIVAL']+$row['INSULOAN']+$row['INSU2']+$row['TEM_MobBill']+$row['THFASociaty']+$row['FAS']+$row['TMP_SP_DED']+$row['STAMP']+$row['PAYESurchage'];
                 $BALANCEPAY=$GROSSPAY-$TOTALDEDU; 
                 ?>
