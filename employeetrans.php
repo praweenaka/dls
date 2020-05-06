@@ -6,7 +6,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title"><b>Loan Master</b></h3>
+            <h3 class="box-title"><b>Employee Transction</b></h3>
         </div>
         <form name= "form1" role="form" class="form-horizontal">
 
@@ -121,7 +121,7 @@
                         <div class="form-group-sm">
                             <label class="col-sm-2" for="invno">OT Hours</label>
                             <div class="col-sm-2">
-                                <input type="date" placeholder="OT Hours" id="ot_hour" class="form-control  input-sm">
+                                <input type="text" placeholder="OT Hours" id="ot_hour" class="form-control  input-sm">
                             </div>
 
                             <label class="col-sm-2" for="invno">OT Amount</label>

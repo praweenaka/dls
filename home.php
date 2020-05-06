@@ -62,6 +62,9 @@ if (isset($_GET['url'])) {
     if($_GET['url'] == 'employeetrans'){
         include_once './employeetrans.php';
     }
+    if($_GET['url'] == 'nopay'){
+        include_once './nopay.php';
+    }
     
     
     if ($_GET['url'] == "create") {
