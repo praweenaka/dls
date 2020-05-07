@@ -6,7 +6,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title"><b>Loan Master</b></h3>
+            <h3 class="box-title"><b>Loan Master </b></h3>
         </div>
         <form name= "form1" role="form" class="form-horizontal">
 
