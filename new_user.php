@@ -45,19 +45,19 @@
                         <input type="password" placeholder="Confirm Password" id="pass2" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group hidden ">
                     <label class="col-sm-2 control-label" for="txt_password1">User Type</label>
                     <div class="col-sm-2">
                         <?php
-                        echo"<select id = \"user_type\" class = \"form-control input-sm\">";
-                        $sql = "select * from user_type";
-                        foreach ($conn->query($sql) as $row) {
-                            echo "<option value='" . trim($row["user_type"]) . "'>" . $row["user_type"] . "</option>";
-                        }
-                        echo"</select>";
+                        // echo"<select id = \"user_type\" class = \"form-control input-sm\">";
+                        // $sql = "select * from user_type";
+                        // foreach ($conn->query($sql) as $row) {
+                        //     echo "<option value='" . trim($row["user_type"]) . "'>" . $row["user_type"] . "</option>";
+                        // }
+                        // echo"</select>";
                         ?>
                     </div>
-                </div>	
+                </div>	 -->
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="txt_password1">User Credit Department</label>
                     <div class="col-sm-2">
