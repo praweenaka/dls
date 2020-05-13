@@ -6,7 +6,7 @@ require_once("./connection_sql.php");
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Assign Privileges</h3>
+            <h3 class="box-title">Assign Privileges For User</h3>
         </div>
         <form role="form" class="form-horizontal">
             <div class="box-body">

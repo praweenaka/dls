@@ -2,10 +2,7 @@
 
 include './connection_sql.php';
 ?>
-
-
-
-
+ 
 
 <?php
     date_default_timezone_set("Asia/Kolkata");   //India time (GMT+5:30)
