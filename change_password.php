@@ -12,7 +12,7 @@ include './connection_sql.php';
 
         <div class="box-header with-border">
 
-            <h3 class="box-title">Change Password</h3>
+            <h3 class="box-title">Change User Password</h3>
 
         </div>
 
