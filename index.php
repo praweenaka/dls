@@ -14,7 +14,7 @@ if (isset($_COOKIE[$cookie_name])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>Login V3</title>
+    <title>Login Payroll</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
