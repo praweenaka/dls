@@ -9,7 +9,7 @@ include_once './connection_sql.php';
        <!--  <link href="style.css" rel="stylesheet" type="text/css" media="screen" /> -->
 
 
-        <title>Search Salary Save</title>
+        <title>Search Loan</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
 
