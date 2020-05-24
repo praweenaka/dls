@@ -36,7 +36,7 @@ if ($operation == "SAVE") {
 if ($_GET["Command"] == "pass_quot") {
 
 
-
+//passdata
 
   $_SESSION["custno"] = $_GET['custno'];
 
