@@ -3,7 +3,7 @@
 session_start();
 date_default_timezone_set('Asia/Colombo');
 require_once('connectioni.php');
-
+// save
 if ($_GET["Command"] == "save") {
 
     $sql = "delete from user_mast where user_name = '" . $_SESSION['CURRENT_USER'] . "'";
