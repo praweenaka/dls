@@ -49,7 +49,7 @@ if ($_GET["Command"] == "pass_quot") {
 
 
 if ($_GET["Command"] == "updateTable") {
-
+// update table
     header('Content-Type: text/xml');
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
     $ResponseXML = "";
