@@ -2,7 +2,7 @@
 include './connection_sql.php';
 ?>
 
-<!-- Main content -->
+<!-- Main content info -->
 
 <section class="content">
 
